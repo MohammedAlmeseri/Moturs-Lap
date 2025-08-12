@@ -1,0 +1,361 @@
+:root {
+    --header-background-color: #11141a;
+    --secondary-font-family: Verdana, Geneva, Tahoma, sans-serif;
+    --button-color: #00bfff;
+    --first-font-family: 'Courier New', Courier, monospace;
+    --front-second-color: #6397b8;
+}
+
+/* End Variables */
+
+/* Start Global Rules */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: #131720;
+}
+
+
+
+.parent {
+    background-color: #eee;
+
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+
+/*  Small  */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/*  Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/*  Large  */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/*  End Global Rules */
+/* Start Header */
+header .header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background-color: #11141a2d;
+    height: 65px;
+    border-bottom: 1px solid rgb(75, 74, 74);
+    box-shadow: 0px 5px 4px -6px white;
+}
+
+header .header .project-name {
+    color: white;
+    font-weight: bold;
+    font-size: clamp(1rem, 1.5vw, 2rem);
+}
+
+header .header .header-nav nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: var(--secondary-font-family);
+    font-size: clamp(1rem, 1vw, 2rem);
+    margin-left: 40px;
+    padding-bottom: 3px;
+
+}
+
+header .header .header-nav nav a::after {
+    content: " ";
+    position: absolute;
+    height: 4px;
+    width: 0;
+    bottom: -3px;
+    left: 0;
+    background-color: #00bfff;
+    transition: width 0.5s ease;
+    transform-origin: left;
+
+
+}
+
+header .header .header-nav nav a:hover::after {
+    width: 100%;
+}
+
+
+header .header .header-nav nav a:first-of-type {
+    margin: 0;
+}
+
+header .header .Quote a {
+    color: black;
+    text-decoration: none;
+    font-family: var(--secondary-font-family);
+    font-weight: bold;
+    font-size: clamp(1rem, 1vw, 2rem);
+    /* background-color: var(--button-color); */
+
+}
+
+header .header .Quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    background-color: #00bfff;
+    width: 120px;
+    border-radius: 10px;
+    transition: 0.2s all ease-in-out;
+}
+
+header .header .Quote:hover {
+    background-color: #00a1d6;
+    outline: 4px solid #fffefe;
+}
+
+@media (max-width: 767px) {
+    header .header .project-name {
+        font-size: 12px;
+    }
+
+
+    header .header .header-nav nav a {
+        font-size: 10px;
+        margin-left: 5px;
+    }
+
+    header .header .Quote {
+        height: 30px;
+        width: 80px;
+
+    }
+
+    header .header .Quote a {
+        font-size: 10px;
+    }
+}
+
+header .header .header-nav nav a:nth-child(3) {
+    color: #00bfff;
+
+}
+
+/* End header */
+/* Start Project */
+.project {
+    margin-top: 100px;
+}
+
+.project .container .header h2 {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    font-family: var(--secondary-font-family);
+    margin-bottom: 0;
+}
+
+.project .container .header p {
+    color: var(--front-second-color);
+    text-align: center;
+    font-family: var(--first-font-family);
+    font-weight: bold;
+}
+
+.project .container .soon {
+    display: flex;
+    color: var(--button-color);
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+}
+
+.project .container .soon ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    width: 400px;
+    height: 50px;
+    padding-right: 30px;
+    background-color: #0e2430;
+    border-radius: 25px;
+    /* border: 2px solid cyan ; */
+
+
+}
+
+.project .container .soon ul::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(255, 0, 221, 1) 100%);
+    z-index: -1;
+    border-radius: inherit;
+}
+
+.project .container .soon ul li i {
+    padding-right: 20px;
+    font-size: 12px;
+}
+
+.project .container .soon ul li {
+    font-size: 14px;
+}
+
+.project .container .project-boxes {
+    margin-top: 50px;
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 15px;
+}
+
+.project .container .project-boxes .box1,
+.project .container .project-boxes .box2,
+.project .container .project-boxes .box3 {
+    background-color: #1b202c;
+    padding: 20px;
+    border: 2px solid rgba(128, 128, 128, 0.345);
+
+}
+
+.project .container .project-boxes .box1 .role p,
+.project .container .project-boxes .box2 .role p,
+.project .container .project-boxes .box3 .role p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--button-color);
+    width: 140px;
+    height: 30px;
+    border: 1px solid cyan;
+    border-radius: 15px;
+    font-size: 13px;
+    font-family: var(--secondary-font-family);
+
+}
+
+.project .container .project-boxes .box1 .text h2,
+.project .container .project-boxes .box2 .text h2,
+.project .container .project-boxes .box3 .text h2 {
+    color: gray;
+    font-family: var(--secondary-font-family);
+    font-size: 20px;
+
+}
+
+.project .container .project-boxes .box1 .text p,
+.project .container .project-boxes .box2 .text p,
+.project .container .project-boxes .box3 .text p {
+    color: var(--front-second-color);
+    font-family: var(--first-font-family);
+
+}
+
+.project .container .project-boxes .box1 .tools h3,
+.project .container .project-boxes .box2 .tools h3,
+.project .container .project-boxes .box3 .tools h3 {
+    margin-top: 40px;
+    color: var(--button-color);
+    font-size: 20px;
+    font-family: var(--secondary-font-family);
+}
+
+.project .container .project-boxes .box2 .tools h3 {
+    margin-top: 25px;
+}
+
+.project .container .project-boxes .box1 .tools .roles ul,
+.project .container .project-boxes .box2 .tools .roles ul,
+.project .container .project-boxes .box3 .tools .roles ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    padding: 0;
+
+}
+
+.project .container .project-boxes .box1 .tools .roles ul li,
+.project .container .project-boxes .box2 .tools .roles ul li,
+.project .container .project-boxes .box3 .tools .roles ul li {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 120px;
+    border: 1px solid cyan;
+    border-radius: 15px;
+    color: var(--front-second-color);
+    font-weight: bold;
+    font-family: var(--secondary-font-family);
+    background-color: rgb(4, 34, 34);
+
+}
+
+.project .container .project-boxes .box1 .tools .roles ul li:first-of-type,
+.project .container .project-boxes .box3 .tools .roles ul li:first-of-type {
+    margin-left: 0;
+}
+
+.project .container .project-boxes .box2 .tools .roles ul li {
+    width: 230px;
+    margin: 0;
+}
+
+.project .container .project-boxes {
+    margin-bottom: 100px;
+}
+
+.project .container .project-boxes .box1,
+.project .container .project-boxes .box2,
+.project .container .project-boxes .box3 {
+    transition: 0.3s all ease-in-out;
+}
+
+.project .container .project-boxes .box1:hover,
+.project .container .project-boxes .box2:hover,
+.project .container .project-boxes .box3:hover {
+    box-shadow: 0px 0px 30px 15px darkcyan;
+}
+
+/* End Project */
