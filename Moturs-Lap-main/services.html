@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/servicestyle.css" />
+    <link rel="stylesheet" href="CSS/homestyle.css" />
     <title>Moturs Lap | Services</title>
     <!--  Main Template CSS File  -->
     <link rel="stylesheet" href="CSS/normalize.css" />
@@ -141,5 +142,39 @@
       </div>
     </div>
     <!-- End Services -->
+
+    <div class="noise"></div>
+    <div class="mouse-light" id="mouseLight"></div>
+    <div class="spark-field" id="sparkField"></div>
+
+    <script>
+      const mouseLight = document.getElementById("mouseLight");
+      const sparkField = document.getElementById("sparkField");
+
+      function updateLight(x, y) {
+        mouseLight.style.left = `${x}px`;
+        mouseLight.style.top = `${y}px`;
+      }
+
+      function createSparks(count = 20) {
+        for (let i = 0; i < count; i++) {
+          const spark = document.createElement("div");
+          spark.className = "spark";
+          const size = Math.random() * 8 + 6;
+          spark.style.width = spark.style.height = `${size}px`;
+          spark.style.left = `${Math.random() * 100}%`;
+          spark.style.top = `${Math.random() * 100}%`;
+          spark.style.animationDuration = `${Math.random() * 4 + 4}s`;
+          spark.style.animationDelay = `${Math.random() * -4}s`;
+          sparkField.appendChild(spark);
+        }
+      }
+
+      document.addEventListener("pointermove", (event) => {
+        updateLight(event.clientX, event.clientY);
+      });
+
+      createSparks();
+    </script>
   </body>
 </html>

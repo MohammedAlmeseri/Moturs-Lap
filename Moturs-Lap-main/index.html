@@ -4,412 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/homestyle.css" />
-    <link rel="stylesheet" href="CSS/normalize.css" />
+    <title>Moturs Lap | Home</title>
+    <!--  Main Template CSS File  -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!--  Render all CSS normally  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Cairo:wght@200..1000&family=Jomhuria&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="CSS/all.min.css" />
-    <title>Moturs Lap | Home</title>
-    <style>
-      :root {
-        --bg-image: url("https://picsum.photos/seed/forest-night-88/1920/1080");
-        --text: #f5f7ff;
-        --muted: rgba(245, 247, 255, 0.74);
-        --glass: rgba(255, 255, 255, 0.08);
-        --glass-border: rgba(255, 255, 255, 0.14);
-        --shadow: 0 20px 70px rgba(0, 0, 0, 0.45);
-        --accent: #7ce7ff;
-        --accent-2: #b388ff;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        margin: 0;
-        min-height: 100%;
-      }
-
-      body {
-        font-family: "Outfit", sans-serif;
-        color: var(--text);
-        background: #071018;
-        overflow-x: hidden;
-        position: relative;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background:
-          linear-gradient(180deg, rgba(6,10,22,0.28), rgba(4,8,18,0.72)),
-          linear-gradient(120deg, rgba(67, 132, 255, 0.18), rgba(165, 95, 255, 0.12)),
-          var(--bg-image) center center / cover no-repeat;
-        filter: brightness(0.68) contrast(1.15) saturate(1.08);
-        transform: scale(1.04);
-        z-index: -6;
-      }
-
-      body::after {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background:
-          radial-gradient(circle at 15% 20%, rgba(90,160,255,0.22), transparent 22%),
-          radial-gradient(circle at 80% 25%, rgba(170,110,255,0.16), transparent 22%),
-          radial-gradient(circle at 55% 82%, rgba(90,255,220,0.11), transparent 25%);
-        mix-blend-mode: screen;
-        animation: ambientShift 14s ease-in-out infinite alternate;
-        pointer-events: none;
-        z-index: -5;
-      }
-
-      .noise {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: -4;
-        opacity: 0.05;
-        background-image:
-          radial-gradient(circle at 20% 20%, rgba(255,255,255,0.9) 0.4px, transparent 0.6px),
-          radial-gradient(circle at 70% 40%, rgba(255,255,255,0.7) 0.3px, transparent 0.5px),
-          radial-gradient(circle at 40% 80%, rgba(255,255,255,0.5) 0.5px, transparent 0.7px);
-        background-size: 180px 180px, 220px 220px, 260px 260px;
-      }
-
-      .mouse-light {
-        position: fixed;
-        width: 360px;
-        height: 360px;
-        border-radius: 50%;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        background:
-          radial-gradient(circle,
-            rgba(255,255,240,0.22) 0%,
-            rgba(135,190,255,0.14) 30%,
-            rgba(90,110,255,0.05) 52%,
-            rgba(0,0,0,0) 72%);
-        filter: blur(18px);
-        mix-blend-mode: screen;
-        z-index: -3;
-      }
-
-      .spark-field {
-        position: fixed;
-        inset: 0;
-        overflow: hidden;
-        pointer-events: none;
-        z-index: -2;
-      }
-
-      .spark {
-        position: absolute;
-        border-radius: 999px;
-        background: radial-gradient(circle, rgba(255,255,255,0.95), rgba(124,231,255,0.2) 60%, transparent 74%);
-        box-shadow: 0 0 14px rgba(124,231,255,0.55);
-        animation: floatUp linear infinite;
-        opacity: 0.7;
-      }
-
-      .page {
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        padding: 32px 20px;
-        position: relative;
-        z-index: 2;
-      }
-
-      .hero {
-        width: min(1100px, 100%);
-        display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 24px;
-        align-items: stretch;
-      }
-
-      .hero-content {
-        padding: 42px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 520px;
-      }
-
-      .card {
-        background: var(--glass);
-        border: 1px solid var(--glass-border);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        box-shadow: var(--shadow);
-        border-radius: 28px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.01));
-        pointer-events: none;
-      }
-
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 0.9rem;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--muted);
-        margin-bottom: 18px;
-      }
-
-      .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--accent), #ffffff);
-        box-shadow: 0 0 18px rgba(124, 231, 255, 0.7);
-      }
-
-      h1 {
-        margin: 0;
-        font-size: clamp(2.6rem, 6vw, 5.5rem);
-        line-height: 0.96;
-        letter-spacing: -0.04em;
-        max-width: 8ch;
-        text-wrap: balance;
-      }
-
-      .lead {
-        margin: 20px 0 0;
-        font-size: clamp(1rem, 1.8vw, 1.15rem);
-        line-height: 1.75;
-        color: var(--muted);
-        max-width: 54ch;
-      }
-
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        margin-top: 28px;
-      }
-
-      button {
-        border: 0;
-        padding: 14px 20px;
-        border-radius: 999px;
-        font: inherit;
-        color: white;
-        cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-        min-width: 140px;
-      }
-
-      button:hover {
-        transform: translateY(-2px);
-      }
-
-      .primary {
-        background: linear-gradient(135deg, rgba(124,231,255,0.28), rgba(179,136,255,0.28));
-        box-shadow: 0 10px 30px rgba(124, 231, 255, 0.18);
-        border: 1px solid rgba(255,255,255,0.18);
-      }
-
-      .secondary {
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.14);
-      }
-
-      .stats {
-        margin-top: 26px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-      }
-
-      .stat {
-        background: rgba(255,255,255,0.06);
-        border: 1px solid rgba(255,255,255,0.09);
-        border-radius: 20px;
-        padding: 16px;
-      }
-
-      .stat strong {
-        display: block;
-        font-size: 1.4rem;
-        margin-bottom: 6px;
-      }
-
-      .stat span {
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      .side {
-        display: grid;
-        gap: 20px;
-        grid-template-rows: 1fr 1fr;
-      }
-
-      .card {
-        padding: 26px;
-      }
-
-      .orb {
-        width: 130px;
-        height: 130px;
-        margin: 4px auto 22px;
-        border-radius: 50%;
-        background:
-          radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(124,231,255,0.95) 18%, rgba(124,231,255,0.18) 45%, transparent 70%),
-          radial-gradient(circle at 70% 70%, rgba(179,136,255,0.9), transparent 45%);
-        box-shadow:
-          0 0 35px rgba(124,231,255,0.35),
-          0 0 90px rgba(179,136,255,0.16);
-        animation: pulseOrb 4.2s ease-in-out infinite;
-      }
-
-      .card h2 {
-        margin: 0 0 12px;
-        font-size: 1.3rem;
-      }
-
-      .card p {
-        margin: 0;
-        line-height: 1.7;
-        color: var(--muted);
-      }
-
-      .bars {
-        margin-top: 20px;
-        display: grid;
-        gap: 12px;
-      }
-
-      .bar {
-        height: 10px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.08);
-        overflow: hidden;
-        border: 1px solid rgba(255,255,255,0.08);
-      }
-
-      .bar span {
-        display: block;
-        height: 100%;
-        border-radius: inherit;
-        background: linear-gradient(90deg, rgba(124,231,255,0.9), rgba(179,136,255,0.9));
-        box-shadow: 0 0 18px rgba(124,231,255,0.25);
-        width: 50%;
-        transition: width 0.6s ease;
-      }
-
-      .footer-note {
-        margin-top: 16px;
-        font-size: 0.92rem;
-        color: rgba(255,255,255,0.62);
-      }
-
-      .pulse-mode .card {
-        box-shadow:
-          0 20px 70px rgba(0, 0, 0, 0.45),
-          0 0 38px rgba(124,231,255,0.12);
-      }
-
-      .pulse-mode body::after {
-        filter: saturate(1.2);
-      }
-
-      @keyframes floatUp {
-        from {
-          transform: translateY(0) scale(0.75);
-          opacity: 0;
-        }
-        12% {
-          opacity: 0.75;
-        }
-        to {
-          transform: translateY(-120vh) scale(1.35);
-          opacity: 0;
-        }
-      }
-
-      @keyframes pulseOrb {
-        0%, 100% {
-          transform: scale(1);
-          filter: hue-rotate(0deg);
-        }
-        50% {
-          transform: scale(1.08);
-          filter: hue-rotate(24deg);
-        }
-      }
-
-      @keyframes ambientShift {
-        0% {
-          filter: hue-rotate(0deg) brightness(1);
-        }
-        100% {
-          filter: hue-rotate(16deg) brightness(1.08);
-        }
-      }
-
-      @media (max-width: 920px) {
-        .hero {
-          grid-template-columns: 1fr;
-        }
-
-        .hero-content {
-          min-height: auto;
-          padding: 28px;
-        }
-
-        .stats {
-          grid-template-columns: 1fr;
-        }
-
-        .side {
-          grid-template-rows: auto;
-        }
-      }
-
-      @media (max-width: 560px) {
-        .page {
-          padding: 18px;
-        }
-
-        .hero-content,
-        .card {
-          border-radius: 22px;
-        }
-
-        .hero-content,
-        .card {
-          padding: 22px;
-        }
-
-        .actions {
-          flex-direction: column;
-        }
-
-        button {
-          width: 100%;
-        }
-      }
-    </style>
+    <!--  Goolge Fonts  -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Fonts icons libary -->
   </head>
   <body>
+    <!-- Start Header -->
     <header>
       <div class="header">
         <div class="project-name">Moturs Lap</div>
@@ -426,83 +36,39 @@
         </div>
       </div>
     </header>
-
-    <div class="noise"></div>
-    <div class="mouse-light" id="mouseLight"></div>
-    <div class="spark-field" id="sparkField"></div>
-
-    <main class="page">
-      <section class="hero">
-        <div class="hero-content">
-          <div class="eyebrow">
-            <span class="dot"></span>
-            Inline JavaScript effect
+    <!-- End Header -->
+    <!-- Start Landing -->
+    <div class="landing">
+      <div class="background">
+        <div class="container">
+          <div class="text">
+            <h2>From concept to creation — engineering made real.</h2>
+            <p>
+              Smart, precise, and remote mechanical solutions tailored for
+              innovators, students, and businesses alike.
+            </p>
+            <p>
+              We turn your technical ideas into reality — from 3D design to
+              simulation, rendering, and training.
+            </p>
           </div>
-
-          <h1>Better lighting, moving glow, and a live background vibe.</h1>
-
-          <p class="lead">
-            This example adds a full background picture, cinematic overlays, floating sparks, a
-            mouse-follow light, and buttons that trigger extra visual effects.
-          </p>
-
-          <div class="actions">
-            <button class="primary" id="boostBtn">Boost lighting</button>
-            <button class="secondary" id="shuffleBtn">Shuffle colors</button>
-          </div>
-
-          <div class="stats">
-            <div class="stat">
-              <strong id="countA">28</strong>
-              <span>Floating particles.</span>
-            </div>
-            <div class="stat">
-              <strong id="countB">360px</strong>
-              <span>Soft mouse light size.</span>
-            </div>
-            <div class="stat">
-              <strong id="countC">Live</strong>
-              <span>Interactive background response.</span>
-            </div>
+          <div class="landing-buttons">
+            <a href="project.html">Start Your Project</a>
+            <a href="s.html">View Services</a>
           </div>
         </div>
-
-        <div class="side">
-          <article class="card">
-            <div class="orb"></div>
-            <h2>Ambient glow orb</h2>
-            <p>
-              The glowing orb pulses slowly to make the page feel more alive without being too heavy
-              or distracting.
-            </p>
-          </article>
-
-          <article class="card">
-            <h2>Lighting intensity</h2>
-            <p>
-              Click the buttons to make the scene brighter or rotate the accent colors for a new look.
-            </p>
-
-            <div class="bars">
-              <div class="bar"><span id="bar1" style="width: 72%;"></span></div>
-              <div class="bar"><span id="bar2" style="width: 58%;"></span></div>
-              <div class="bar"><span id="bar3" style="width: 84%;"></span></div>
-            </div>
-
-            <div class="footer-note">
-              Replace the background image URL in <code>--bg-image</code> with your own picture anytime.
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-
+      </div>
+    </div>
+    <!-- End Landing -->
+    <!-- Start Feature -->
     <div class="feature">
       <div class="container">
         <div class="text">
           <h2>Welcome to MSL Engineering</h2>
           <p>
-            <span class="colored-text">Engineering (Mechanical Solutions Lab)</span> is your remote partner in mechanical design, simulation, rendering,
+            <span class="colored-text"
+              >Engineering (Mechanical Solutions Lab) </span
+            >is your remote partner in mechanical design, simulation, rendering,
             and technical training.
           </p>
           <p>
@@ -517,7 +83,8 @@
         </div>
       </div>
     </div>
-
+    <!-- End Feature -->
+    <!-- Start Process -->
     <div class="process">
       <div class="container">
         <div class="text">
@@ -565,6 +132,8 @@
       </div>
     </div>
 
+    <!-- End Process -->
+    <!-- Start Footer -->
     <div class="footer">
       <div class="container">
         <div class="text">
@@ -580,113 +149,40 @@
         </div>
       </div>
     </div>
+    <!-- End Footer -->
+
+    <div class="noise"></div>
+    <div class="mouse-light" id="mouseLight"></div>
+    <div class="spark-field" id="sparkField"></div>
 
     <script>
-      (() => {
-        const sparkField = document.getElementById("sparkField");
-        const mouseLight = document.getElementById("mouseLight");
-        const boostBtn = document.getElementById("boostBtn");
-        const shuffleBtn = document.getElementById("shuffleBtn");
-        const bar1 = document.getElementById("bar1");
-        const bar2 = document.getElementById("bar2");
-        const bar3 = document.getElementById("bar3");
-        const countA = document.getElementById("countA");
+      const mouseLight = document.getElementById("mouseLight");
+      const sparkField = document.getElementById("sparkField");
 
-        const sparkCount = 28;
-        let targetX = window.innerWidth / 2;
-        let targetY = window.innerHeight / 2;
-        let currentX = targetX;
-        let currentY = targetY;
-        let pulseOn = false;
-        let hue = 0;
+      function updateLight(x, y) {
+        mouseLight.style.left = `${x}px`;
+        mouseLight.style.top = `${y}px`;
+      }
 
-        function createSparks() {
-          for (let i = 0; i < sparkCount; i++) {
-            const spark = document.createElement("span");
-            const size = (Math.random() * 6 + 3).toFixed(2);
-            spark.className = "spark";
-            spark.style.width = size + "px";
-            spark.style.height = size + "px";
-            spark.style.left = Math.random() * 100 + "vw";
-            spark.style.top = 100 + Math.random() * 25 + "vh";
-            spark.style.animationDuration = (8 + Math.random() * 11).toFixed(2) + "s";
-            spark.style.animationDelay = (-Math.random() * 12).toFixed(2) + "s";
-            spark.style.opacity = (0.25 + Math.random() * 0.6).toFixed(2);
-            sparkField.appendChild(spark);
-          }
-          countA.textContent = String(sparkCount);
+      function createSparks(count = 20) {
+        for (let i = 0; i < count; i++) {
+          const spark = document.createElement("div");
+          spark.className = "spark";
+          const size = Math.random() * 8 + 6;
+          spark.style.width = spark.style.height = `${size}px`;
+          spark.style.left = `${Math.random() * 100}%`;
+          spark.style.top = `${Math.random() * 100}%`;
+          spark.style.animationDuration = `${Math.random() * 4 + 4}s`;
+          spark.style.animationDelay = `${Math.random() * -4}s`;
+          sparkField.appendChild(spark);
         }
+      }
 
-        function animateLight() {
-          currentX += (targetX - currentX) * 0.12;
-          currentY += (targetY - currentY) * 0.12;
-          mouseLight.style.left = currentX + "px";
-          mouseLight.style.top = currentY + "px";
-          requestAnimationFrame(animateLight);
-        }
+      document.addEventListener("pointermove", (event) => {
+        updateLight(event.clientX, event.clientY);
+      });
 
-        function randomBarValues() {
-          const values = [
-            Math.floor(45 + Math.random() * 45),
-            Math.floor(40 + Math.random() * 50),
-            Math.floor(50 + Math.random() * 40),
-          ];
-          bar1.style.width = values[0] + "%";
-          bar2.style.width = values[1] + "%";
-          bar3.style.width = values[2] + "%";
-        }
-
-        function boostLighting() {
-          pulseOn = !pulseOn;
-          document.documentElement.classList.toggle("pulse-mode", pulseOn);
-
-          if (pulseOn) {
-            document.body.style.setProperty("--glass", "rgba(255, 255, 255, 0.12)");
-            document.body.style.setProperty("--glass-border", "rgba(255, 255, 255, 0.22)");
-            mouseLight.style.width = "420px";
-            mouseLight.style.height = "420px";
-            boostBtn.textContent = "Normal lighting";
-            document.getElementById("countB").textContent = "420px";
-          } else {
-            document.body.style.setProperty("--glass", "rgba(255, 255, 255, 0.08)");
-            document.body.style.setProperty("--glass-border", "rgba(255, 255, 255, 0.14)");
-            mouseLight.style.width = "360px";
-            mouseLight.style.height = "360px";
-            boostBtn.textContent = "Boost lighting";
-            document.getElementById("countB").textContent = "360px";
-          }
-
-          randomBarValues();
-        }
-
-        function shuffleColors() {
-          hue = (hue + 42) % 360;
-          document.body.style.filter = "hue-rotate(" + hue + "deg)";
-          randomBarValues();
-        }
-
-        window.addEventListener("mousemove", (e) => {
-          targetX = e.clientX;
-          targetY = e.clientY;
-        });
-
-        window.addEventListener(
-          "touchmove",
-          (e) => {
-            if (e.touches && e.touches[0]) {
-              targetX = e.touches[0].clientX;
-              targetY = e.touches[0].clientY;
-            }
-          },
-          { passive: true }
-        );
-
-        boostBtn.addEventListener("click", boostLighting);
-        shuffleBtn.addEventListener("click", shuffleColors);
-
-        createSparks();
-        animateLight();
-      })();
+      createSparks();
     </script>
   </body>
 </html>
