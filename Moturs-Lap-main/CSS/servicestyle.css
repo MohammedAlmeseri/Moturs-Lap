@@ -1,0 +1,406 @@
+:root {
+    --header-background-color: #11141a;
+    --secondary-font-family: Verdana, Geneva, Tahoma, sans-serif;
+    --button-color: #00bfff;
+    --first-font-family: 'Courier New', Courier, monospace;
+    --front-second-color: #6397b8;
+}
+
+/* End Variables */
+
+/* Start Global Rules */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: #131720;
+}
+
+
+
+.parent {
+    background-color: #eee;
+
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+
+/*  Small  */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/*  Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/*  Large  */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/*  End Global Rules */
+
+/* Start Header */
+header .header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background-color: #11141a2d;
+    height: 65px;
+    border-bottom: 1px solid rgb(75, 74, 74);
+    box-shadow: 0px 5px 4px -6px white;
+}
+
+header .header .project-name {
+    color: white;
+    font-weight: bold;
+    font-size: clamp(1rem, 1.5vw, 2rem);
+}
+
+header .header .header-nav nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: var(--secondary-font-family);
+    font-size: clamp(1rem, 1vw, 2rem);
+    margin-left: 40px;
+    padding-bottom: 3px;
+
+}
+
+header .header .header-nav nav a::after {
+    content: " ";
+    position: absolute;
+    height: 4px;
+    width: 0;
+    bottom: -3px;
+    left: 0;
+    background-color: #00bfff;
+    transition: width 0.5s ease;
+    transform-origin: left;
+
+
+}
+
+header .header .header-nav nav a:hover::after {
+    width: 100%;
+}
+
+
+header .header .header-nav nav a:first-of-type {
+    margin: 0;
+}
+
+header .header .Quote a {
+    color: black;
+    text-decoration: none;
+    font-family: var(--secondary-font-family);
+    font-weight: bold;
+    font-size: clamp(1rem, 1vw, 2rem);
+    /* background-color: var(--button-color); */
+
+}
+
+header .header .Quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    background-color: #00bfff;
+    width: 120px;
+    border-radius: 10px;
+    transition: 0.2s all ease-in-out;
+}
+
+header .header .Quote:hover {
+    background-color: #00a1d6;
+    outline: 4px solid #fffefe;
+}
+
+@media (max-width: 767px) {
+    header .header .project-name {
+        font-size: 12px;
+    }
+
+
+    header .header .header-nav nav a {
+        font-size: 10px;
+        margin-left: 5px;
+    }
+
+    header .header .Quote {
+        height: 30px;
+        width: 80px;
+
+    }
+
+    header .header .Quote a {
+        font-size: 10px;
+    }
+}
+
+header .header .header-nav nav a:nth-child(2) {
+    color: #00bfff;
+
+}
+
+/* End header */
+
+/* Start Services */
+.services .container .service-boxes {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 15px;
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+}
+
+.services .container .text h1 {
+    color: white;
+    margin: 0;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 50px;
+    font-family: var(--secondary-font-family);
+
+}
+
+.services .container .text p {
+    margin: 0;
+    color: var(--front-second-color);
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 70px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.services .container .service-boxes .col1 .box1,
+.services .container .service-boxes .col1 .box2,
+.services .container .service-boxes .col2 .box1,
+.services .container .service-boxes .col2 .box2 {
+    border: 2px solid #8080803d;
+    background-color: #1b202c;
+    padding: 20px;
+    min-height: 420px;
+    transition: 0.3s all ease-in-out;
+}
+
+.services .container .service-boxes .col1 .box1 {
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.services .container .service-boxes .col1 .box2 {
+    border-radius: 5px;
+}
+
+.services .container .service-boxes .col1 .box1 .header h2,
+.services .container .service-boxes .col1 .box2 .header h2 {
+    color: white;
+    font-size: 26px;
+    font-family: var(--secondary-font-family);
+
+}
+
+.services .container .service-boxes .col1 .box1 .header h2 i,
+.services .container .service-boxes .col1 .box2 .header h2 i {
+    margin-right: 10px;
+    color: var(--button-color);
+    font-size: 30px;
+}
+
+.services .container .service-boxes .col1 .box1 .sub-header h5,
+.services .container .service-boxes .col1 .box2 .sub-header h5 {
+    color: var(--button-color);
+    font-size: 17px;
+    margin-left: 10px;
+    font-family: var(--secondary-font-family);
+    margin-bottom: 0;
+}
+
+.services .container .service-boxes .col1 .box1 .roles,
+.services .container .service-boxes .col1 .box2 .roles {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.services .container .service-boxes .col1 .box1 .roles p,
+.services .container .service-boxes .col1 .box2 .roles p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 100%;
+    height: 30px;
+    background-color: #1d2330;
+    border-radius: 15px;
+    border: 1px solid #00a1d6;
+    font-family: var(--first-font-family);
+}
+
+.services .container .service-boxes .col1 .box1 .cases h2,
+.services .container .service-boxes .col1 .box2 .cases h2 {
+    color: var(--button-color);
+
+}
+
+.services .container .service-boxes .col1 .box1 .cases ul,
+.services .container .service-boxes .col1 .box2 .cases ul {
+    color: #00bfff;
+    font-family: var(--first-font-family);
+
+}
+
+.services .container .service-boxes .col1 .box1 .cases ul li,
+.services .container .service-boxes .col1 .box2 .cases ul li {
+    font-size: 20px;
+}
+
+.services .container .service-boxes .col1 .box1 .cases ul li p,
+.services .container .service-boxes .col1 .box2 .cases ul li p {
+    color: white;
+    font-size: 16px;
+}
+
+.services .container .service-boxes .col2 .box1 {
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.services .container .service-boxes .col2 .box2 {
+    border-radius: 5px;
+}
+
+.services .container .service-boxes .col2 .box1 .header h2,
+.services .container .service-boxes .col2 .box2 .header h2 {
+    color: white;
+    font-size: 26px;
+    font-family: var(--secondary-font-family);
+}
+
+.services .container .service-boxes .col2 .box1 .header h2 i,
+.services .container .service-boxes .col2 .box2 .header h2 i {
+    margin-right: 10px;
+    color: var(--button-color);
+    font-size: 30px;
+}
+
+.services .container .service-boxes .col2 .box1 .sub-header h5,
+.services .container .service-boxes .col2 .box2 .sub-header h5 {
+    color: var(--button-color);
+    font-size: 17px;
+    margin-left: 10px;
+    font-family: var(--secondary-font-family);
+    margin-bottom: 0;
+}
+
+.services .container .service-boxes .col2 .box1 .roles,
+.services .container .service-boxes .col2 .box2 .roles {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.services .container .service-boxes .col2 .box1 .roles p,
+.services .container .service-boxes .col2 .box2 .roles p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 100%;
+    height: 30px;
+    background-color: #1d2330;
+    border-radius: 15px;
+    border: 1px solid #00a1d6;
+    font-family: var(--first-font-family);
+}
+
+.services .container .service-boxes .col2 .box2 .roles p {
+    width: 100%;
+}
+
+.services .container .service-boxes .col2 .box1 .cases h2,
+.services .container .service-boxes .col2 .box2 .cases h2 {
+    color: var(--button-color);
+}
+
+.services .container .service-boxes .col2 .box1 .cases ul,
+.services .container .service-boxes .col2 .box2 .cases ul {
+    color: #00bfff;
+    font-family: var(--first-font-family);
+}
+
+.services .container .service-boxes .col2 .box1 .cases ul li,
+.services .container .service-boxes .col2 .box2 .cases ul li {
+    font-size: 20px;
+}
+
+.services .container .service-boxes .col2 .box1 .cases ul li p,
+.services .container .service-boxes .col2 .box2 .cases ul li p {
+    color: white;
+    font-size: 16px;
+}
+
+.services .container .service-boxes .col1 .box1:hover,
+.services .container .service-boxes .col1 .box2:hover,
+.services .container .service-boxes .col2 .box1:hover,
+.services .container .service-boxes .col2 .box2:hover {
+    box-shadow: 0px 0px 30px 15px darkcyan;
+}
+
+.services {
+    margin-bottom: 100px;
+}
+
+@media (max-width: 767px) {
+
+    .services .container .service-boxes .col2 .box1 .roles p,
+    .services .container .service-boxes .col2 .box2 .roles p,
+    .services .container .service-boxes .col1 .box1 .roles p,
+    .services .container .service-boxes .col1 .box2 .roles p {
+        font-size: 12px;
+    }
+
+    .services .container .service-boxes .col1 .box2 .roles p {
+        font-size: 10px;
+    }
+}
+
+/* End Services */
