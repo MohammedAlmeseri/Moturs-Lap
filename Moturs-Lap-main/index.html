@@ -135,7 +135,14 @@
         align-items: stretch;
       }
 
-      .panel,
+      .hero-content {
+        padding: 42px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 520px;
+      }
+
       .card {
         background: var(--glass);
         border: 1px solid var(--glass-border);
@@ -147,21 +154,12 @@
         overflow: hidden;
       }
 
-      .panel::before,
       .card::before {
         content: "";
         position: absolute;
         inset: 0;
         background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.01));
         pointer-events: none;
-      }
-
-      .panel {
-        padding: 42px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 520px;
       }
 
       .eyebrow {
@@ -323,7 +321,6 @@
         color: rgba(255,255,255,0.62);
       }
 
-      .pulse-mode .panel,
       .pulse-mode .card {
         box-shadow:
           0 20px 70px rgba(0, 0, 0, 0.45),
@@ -373,7 +370,7 @@
           grid-template-columns: 1fr;
         }
 
-        .panel {
+        .hero-content {
           min-height: auto;
           padding: 28px;
         }
@@ -392,12 +389,12 @@
           padding: 18px;
         }
 
-        .panel,
+        .hero-content,
         .card {
           border-radius: 22px;
         }
 
-        .panel,
+        .hero-content,
         .card {
           padding: 22px;
         }
@@ -436,7 +433,7 @@
 
     <main class="page">
       <section class="hero">
-        <div class="panel">
+        <div class="hero-content">
           <div class="eyebrow">
             <span class="dot"></span>
             Inline JavaScript effect
